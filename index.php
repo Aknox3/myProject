@@ -1,4 +1,7 @@
-<h1>Hello There!</h1>
-<h2>How are you?</h2>
+<?php
+    require_once "vendor/autoload.php";
 
-<p>This is a Paragraph of text</p>
+    $f3 = Base::instance();
+
+    $f3->run();
+?>
