@@ -59,4 +59,9 @@ $animals = addToArray("boa",$animals);
 echo "<p>";
 $animals = mySort($animals);
 
+$flavors = array("grasshopper"=>"The Grasshopper", "maple"=>"Whiskey Maple Bacon",
+    "carrot"=>"Carrot Walnut","velvet"=>"Red Velvet",
+    "lemon"=>"Lemon Drop","tiramisu"=>"Tiramisu");
+
+
 ?>
