@@ -6,7 +6,7 @@
  * Time: 6:11 PM
  */
 
-ini_set(E_all);
+ini_set('error_reporting', E_ALL);
 error_reporting(3);
 $animals = array('panda','alpaca','boa');
 
@@ -23,16 +23,40 @@ function mySort($animals)
             }
         }
     }
+
+    for ($i = 0; $i < count($animals);$i++) {
+       echo $animals[$i] . " ";
+    }
+
     return $animals;
 }
 
-
-echo "<h1> Initial Array </h1>";
-print_r($animals);
-
-echo "<p>";
-echo "<h1> Sorted Array</h1>";
+function addToArray($input, $animals)
+{
+    echo "Adding " .$input."...";
+    if (!in_array($input, $animals))
+    {
+        array_push($animals, strtolower($input));
+    }
+    return $animals;
+}
+//sort the initial array
 $animals = mySort($animals);
-print_r($animals);
+
+//add Goat to the array
+echo "<p>";
+$animals = addToArray("Goat",$animals);
+
+//sort the newly Goat-ed array
+echo "<p>";
+$animals = mySort($animals);
+
+//Add boa to the array (again)
+echo "<p>";
+$animals = addToArray("boa",$animals);
+
+//sort an array which has not actually changed
+echo "<p>";
+$animals = mySort($animals);
 
 ?>
