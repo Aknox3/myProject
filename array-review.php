@@ -58,10 +58,16 @@ $animals = addToArray("boa",$animals);
 //sort an array which has not actually changed
 echo "<p>";
 $animals = mySort($animals);
+echo "<p>";
 
+//initialize Flavors array
 $flavors = array("grasshopper"=>"The Grasshopper", "maple"=>"Whiskey Maple Bacon",
     "carrot"=>"Carrot Walnut","velvet"=>"Red Velvet",
     "lemon"=>"Lemon Drop","tiramisu"=>"Tiramisu");
 
-
+//iterate over Flavors and create a list of checboxes
+foreach ($flavors as $name => $flavor)
+{
+    echo '<input type = "checkbox" name="flavors[]" value ="'.$name.'"> '.$flavor.'<br>';
+}
 ?>
